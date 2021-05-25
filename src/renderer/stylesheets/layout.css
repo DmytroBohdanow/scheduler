@@ -1,0 +1,65 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  
+  .titlebar {
+      position: fixed;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      padding: 0 2px 0 2px;
+      top: 0;
+      left: 0;
+      height: 30px;
+      width: 100%;
+      line-height: 30px;
+      background-color: #2d98da;
+      color: #fff;
+      text-align: center;
+      -webkit-app-region: drag;
+      z-index: 0;
+  }
+
+  .titlebar:hover {
+    color: grey;
+  }
+
+  .window-handlers-box {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    z-index: 2;
+  }
+
+  .window-minimize-btn, .window-close-btn {
+    border: none;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background-color:#2d98da;
+  }
+
+  .window-minimize-btn:hover, .window-close-btn:hover {
+    color: grey;
+  }
+
+  .root {
+      margin-top: 30px;
+  }
+  
+  

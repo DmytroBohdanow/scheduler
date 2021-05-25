@@ -1,0 +1,15 @@
+.users-item-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.users-item-name {
+    font-size: 26px;
+}

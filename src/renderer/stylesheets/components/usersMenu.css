@@ -1,0 +1,29 @@
+.users-menu-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+}
+
+.users-menu-item {
+    width: fit-content;
+    display: inline-block;
+    height: 30px;
+    background-color: #3867d6;
+    color: #fff;
+    margin: 10px;
+    padding: 5px 15px 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 1s;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.users-menu-item:hover {
+    opacity: 1;
+}
