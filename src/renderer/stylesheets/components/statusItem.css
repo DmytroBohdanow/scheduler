@@ -1,0 +1,29 @@
+.status-item-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+    align-items: center;
+    color: #fff;
+}
+
+.status-item-name {
+    font-size: 26px;
+}
+
+.status-item-edit-btn svg path {
+    fill: #fff;
+}
+
+.status-item-delete-btn, .status-item-edit-btn svg path {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 1s;
+}
+
+.status-item-delete-btn:hover, .status-item-edit-btn svg path:hover {
+    opacity: 1;
+}

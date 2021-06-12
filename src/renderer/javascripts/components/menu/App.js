@@ -1,6 +1,6 @@
 import React from 'react'
 import { MainMenu } from './mainMenu'
-import { TitlebarHandlers } from './titlebarHandlers'
+import { TitlebarHandlers } from '../helpers/titlebarHandlers'
 
 export const App = () => {
     return (
