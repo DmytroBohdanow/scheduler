@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     height: 60px;
+    max-height: fit-content;
     margin: 0 auto;
     padding: 0 10px 0 10px;
     align-items: center;
@@ -20,21 +21,39 @@
 
 .users-item-name, .users-item-group, .users-item-group-none {
     font-size: 26px;
+    overflow: hidden;
 }
+
+.users-item-group, .users-item-group-none { text-align: center; }
+
+.users-item-action-box, .users-item-group-none, .users-item-group, .users-item-name {
+    min-width: 33%;
+    max-width: 33%;
+}
+
 .users-item-group-none {
     color: #95a5a6;
 }
 
-.users-item-edit-btn svg path {
+.users-item-action-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.users-item-edit-btn-box svg path {
     fill: #fff;
 }
 
-.users-item-delete-btn, .users-item-edit-btn svg path {
+.users-item-delete-btn, .users-item-edit-btn-box svg path, .users-item-edit-btn-box {
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 1s;
 }
 
-.users-item-delete-btn:hover, .users-item-edit-btn svg path:hover {
+.users-item-delete-btn-box, .users-item-edit-btn-box svg path, .users-item-edit-btn-box {
+    text-align: right;
+}
+
+.users-item-delete-btn:hover, .users-item-edit-btn-box:hover svg path, .users-item-edit-btn-box:hover {
     opacity: 1;
 }

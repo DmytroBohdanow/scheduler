@@ -1,8 +1,8 @@
-.role-item-box {
+.role-item-box-even, .role-item-box-odd {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     height: 60px;
     margin: 0 auto;
     padding: 0 10px 0 10px;
@@ -10,20 +10,32 @@
     color: #fff;
 }
 
+.role-item-box-odd {
+    background-color: #273c75;
+}
+
+.role-item-box-even {
+    background-color: #192a56;
+}
+
 .role-item-name {
     font-size: 26px;
 }
 
-.role-item-edit-btn svg path {
+.role-item-edit-btn-box svg path {
     fill: #fff;
 }
 
-.role-item-delete-btn, .role-item-edit-btn svg path {
+.role-item-delete-btn, .role-item-edit-btn-box svg path, .role-item-edit-btn-box {
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 1s;
 }
 
-.role-item-delete-btn:hover, .role-item-edit-btn svg path:hover {
+.role-item-delete-btn-box, .role-item-edit-btn-box svg path, .role-item-edit-btn-box {
+    text-align: right;
+}
+
+.role-item-delete-btn:hover, .role-item-edit-btn-box:hover svg path, .role-item-edit-btn-box:hover {
     opacity: 1;
 }

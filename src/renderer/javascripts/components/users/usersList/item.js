@@ -16,10 +16,14 @@ export const UsersItem = props => {
               {props.group}
             </div>
             <div className="users-item-action-box">
-                <div className="users-item-edit-btn"><EditIcon/></div>
-                <div className="users-item-delete-btn" onClick={() => {
+                <div className="users-item-delete-btn-box">
+                    <span className="users-item-delete-btn" onClick={() => {
                     props.deleteUser(props.id)
-                    }}>&#10006;</div>
+                    }}>&#10006;</span>
+                </div>
+                <div className="users-item-edit-btn-box">
+                    <span className="users-item-edit-btn"><EditIcon/></span>
+                </div>
             </div>
         </div>
     )

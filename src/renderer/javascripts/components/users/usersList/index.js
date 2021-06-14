@@ -18,7 +18,7 @@ export const UsersList = props => {
         setUsers(data)
         if (document.getElementById('users-search-field').value.length > 0) {
             const usersFiltred = data.filter(user => {
-                return user.name.includes(document.getElementById('users-search-field').value)
+                return user.name.toLowerCase().includes(document.getElementById('users-search-field').value.toLowerCase())
             })
             setUsers(usersFiltred)
         } else {
@@ -32,7 +32,7 @@ export const UsersList = props => {
             <textarea placeholder="...lost someone?" id="users-search-field" onChange={()=> {findUser(props.users)}} className="users-search-field"></textarea>
             </div>
             <div className='users-list-legend'>
-                <div>#. name</div>
+                <div>#. user</div>
                 <div>group</div>
                 <div>actions</div>
             </div>

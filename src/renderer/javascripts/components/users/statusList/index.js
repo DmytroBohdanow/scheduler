@@ -13,6 +13,10 @@ export const StatusList = props => {
         setBtnDisabled(false)
     }
 
+    const deleteStatus = id => {
+        window.electron.deleteStatus(id)
+    }
+
     const handleKey = event => {
         if(document.getElementById("new-status-name").value.length > 0) {
             setBtnDisabled(false)
@@ -40,9 +44,13 @@ export const StatusList = props => {
                 <input name="new-status-name" id="new-status-name" placeholder="Name of a new status" onChange={ifEmptyCheck} onKeyPress={handleKey} className="new-status-name" />
                 <button disabled={btnDisabled} className="new-status-add-btn" onClick={createNewStatus}>Add</button>
             </div>
+            <div className='status-list-legend'>
+                <div>#. status</div>
+                <div>actions</div>
+            </div>
             <div className="status-list">
             {props.statuses && props.statuses.length > 0 ? props.statuses && props.statuses.map((status, index) => {
-                return <StatusItem key={status.id} id={status.id} name={status.name} index={index}/>
+                return <StatusItem key={status.id} deleteStatus={deleteStatus} id={status.id} name={status.name} index={index}/>
             }) :
             <div className='no-statuses'>Can't find anything. Should we add a status?</div>
             }

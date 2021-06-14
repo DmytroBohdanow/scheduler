@@ -3,18 +3,20 @@ import EditIcon from 'edit.svg'
 
 export const StatusItem = (props) => {
 
-    const deleteStatus = () => {
-        console.log(props.id)
-        window.electron.deleteStatus(props.id)
-    }
-
     return (
-        <div className="status-item-box">
+        <div className={(props.index + 1) % 2 === 0 ? 'status-item-box-even' : 'status-item-box-odd'}>
             <div className="status-item-name">{props.index + 1}. {props.name}</div>
             <div className="status-item-action-box">
-                <div className="status-item-edit-btn"><EditIcon/></div>
-                <div className="status-item-delete-btn" onClick={deleteStatus}>&#10006;</div>
+                <div className="status-item-delete-btn-box">
+                    <span className="status-item-delete-btn" onClick={() => {
+                    props.deleteStatus(props.id)
+                    }}>&#10006;</span>
+                </div>
+                <div className="status-item-edit-btn-box">
+                    <span className="status-item-edit-btn"><EditIcon/></span>
+                </div>
             </div>
+           
         </div>
     )
 }

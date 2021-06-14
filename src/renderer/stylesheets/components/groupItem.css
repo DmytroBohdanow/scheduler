@@ -1,13 +1,21 @@
-.group-item-box {
+.group-item-box-even, .group-item-box-odd {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     height: 60px;
     margin: 0 auto;
     padding: 0 10px 0 10px;
     align-items: center;
     color: #fff;
+}
+
+.group-item-box-odd {
+    background-color: #273c75;
+}
+
+.group-item-box-even {
+    background-color: #192a56;
 }
 
 .group-item-name {
@@ -18,12 +26,16 @@
     fill: #fff;
 }
 
-.group-item-delete-btn, .group-item-edit-btn svg path {
+.group-item-delete-btn, .group-item-edit-btn-box svg path, .group-item-edit-btn-box {
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 1s;
 }
 
-.group-item-delete-btn:hover, .group-item-edit-btn svg path:hover {
+.group-item-delete-btn-box, .group-item-edit-btn-box svg path, .group-item-edit-btn-box {
+    text-align: right;
+}
+
+.group-item-delete-btn:hover, .group-item-edit-btn-box:hover svg path, .group-item-edit-btn-box:hover {
     opacity: 1;
 }

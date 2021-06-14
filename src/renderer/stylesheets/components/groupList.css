@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     padding: 5px 2px 5px 2px;
     height: fit-content;
 }
@@ -19,6 +19,20 @@
     font-size: 16px;
     overflow: auto;
     outline: #3867d6;
+}
+
+.group-list-legend {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+    align-items: center;
+    color: #fff;
+    opacity: 0.7;
+    transition: opacity, 1s;
 }
 
 .new-group-add-btn {

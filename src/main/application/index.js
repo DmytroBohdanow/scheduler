@@ -40,8 +40,6 @@ export default class SchedulerApp {
           title: CONFIG.name,
           width,
           height,
-          maxWidth: width,
-          maxHeight: height,
           frame: false,
           fullscreenWindowTitle: 'hidden', 
           webPreferences: {

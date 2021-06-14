@@ -22,6 +22,10 @@ export const RoleList = props => {
         } 
     }
 
+    const deleteRole = id => {
+        window.electron.deleteRole(id)
+    }
+
     const createNewRole = () => {
         setBtnDisabled(true)
         let role = {
@@ -40,9 +44,13 @@ export const RoleList = props => {
                 <input name="new-role-name" id="new-role-name" placeholder="Name of a new role" onChange={ifEmptyCheck} onKeyPress={handleKey} className="new-role-name" />
                 <button disabled={btnDisabled} className="new-role-add-btn" onClick={createNewRole}>Add</button>
             </div>
+            <div className='roles-list-legend'>
+                <div>#. role</div>
+                <div>actions</div>
+            </div>
             <div className="role-list">
             {props.roles && props.roles.length > 0 ? props.roles && props.roles.map((role, index) => {
-                return <RoleItem key={role.id} id={role.id} name={role.name} index={index}/>
+                return <RoleItem key={role.id} deleteRole={deleteRole} id={role.id} name={role.name} index={index}/>
             }) :
             <div className='no-roles'>Can't find anything. Should we add a role?</div>
             }

@@ -13,6 +13,10 @@ export const GroupList = props => {
         setBtnDisabled(false)
     }
 
+    const deleteGroup = id => {
+        window.electron.deleteGroup(id)
+    }
+
     const handleKey = event => {
         if(document.getElementById("new-group-name").value.length > 0) {
             setBtnDisabled(false)
@@ -40,9 +44,13 @@ export const GroupList = props => {
                 <input name="new-group-name" id="new-group-name" placeholder="Name of a new group" onChange={ifEmptyCheck} onKeyPress={handleKey} className="new-group-name" />
                 <button disabled={btnDisabled} className="new-group-add-btn" id="new-group-add-btn" onClick={createNewGroup}>Add</button>
             </div>
+            <div className='group-list-legend'>
+                <div>#. group</div>
+                <div>actions</div>
+            </div>
             <div className="group-list">
             {props.groups && props.groups.length > 0 ? props.groups && props.groups.map((group, index) => {
-                return <GroupItem key={group.id} id={group.id} name={group.name} date={group.createdAt} index={index}/>
+                return <GroupItem key={group.id} id={group.id} deleteGroup={deleteGroup} name={group.name} date={group.createdAt} index={index}/>
             }) :
             <div className='no-groups'>Can't find anything. Should we add a group?</div>
             }

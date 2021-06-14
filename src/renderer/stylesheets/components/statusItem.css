@@ -1,13 +1,21 @@
-.status-item-box {
+.status-item-box-even, .status-item-box-odd {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     height: 60px;
     margin: 0 auto;
     padding: 0 10px 0 10px;
     align-items: center;
     color: #fff;
+}
+
+.status-item-box-odd {
+    background-color: #273c75;
+}
+
+.status-item-box-even {
+    background-color: #192a56;
 }
 
 .status-item-name {
@@ -18,12 +26,16 @@
     fill: #fff;
 }
 
-.status-item-delete-btn, .status-item-edit-btn svg path {
+.status-item-delete-btn, .status-item-edit-btn-box svg path, .status-item-edit-btn-box {
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 1s;
 }
 
-.status-item-delete-btn:hover, .status-item-edit-btn svg path:hover {
+.status-item-delete-btn-box, .status-item-edit-btn-box svg path, .status-item-edit-btn-box {
+    text-align: right;
+}
+
+.status-item-delete-btn:hover, .status-item-edit-btn-box:hover svg path, .status-item-edit-btn-box:hover {
     opacity: 1;
 }
