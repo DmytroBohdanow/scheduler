@@ -50,7 +50,7 @@ export const GroupList = props => {
             </div>
             <div className="group-list">
             {props.groups && props.groups.length > 0 ? props.groups && props.groups.map((group, index) => {
-                return <GroupItem key={group.id} id={group.id} deleteGroup={deleteGroup} name={group.name} date={group.createdAt} index={index}/>
+                return <GroupItem key={group.id} id={group.id} deleteGroup={deleteGroup} name={group.name} groups={props.groups} index={index}/>
             }) :
             <div className='no-groups'>Can't find anything. Should we add a group?</div>
             }

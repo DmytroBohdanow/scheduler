@@ -46,6 +46,7 @@ export const NewUser = props => {
                 <div>
                     <label htmlFor="new-user-group" className="user-group-label">User's group: </label>
                     <select className="new-user-group" id="new-user-group" name="new-user-group">
+                        <option value="none">none</option>
                         {props.groups && props.groups.map((group) => {
                             return <option key={group.id} value={group.id}>{group.name}</option>
                         })}

@@ -29,11 +29,13 @@ export const UsersApp = props => {
          roleListState={roleModal}
          statusListState={statusModal}
          />
-        {usersListModal ? <UsersList users={props.users} groups={props.groups}/> : <></>}
-        {usersNewModal ? <NewUser users={props.users} groups={props.groups}/> : <></>}
-        {groupModal ? <GroupList groups={props.groups}/> : <></>}
-        {roleModal ? <RoleList roles={props.roles}/> : <></>}
-        {statusModal ? <StatusList statuses={props.statuses}/> : <></>}
+        <div className="modal-box">
+            {usersListModal ? <UsersList users={props.users} groups={props.groups}/> : <></>}
+            {usersNewModal ? <NewUser users={props.users} groups={props.groups}/> : <></>}
+            {groupModal ? <GroupList groups={props.groups}/> : <></>}
+            {roleModal ? <RoleList roles={props.roles}/> : <></>}
+            {statusModal ? <StatusList statuses={props.statuses}/> : <></>}
+        </div>
         </>
     )
 }

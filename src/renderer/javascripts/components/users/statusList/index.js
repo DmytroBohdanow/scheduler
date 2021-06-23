@@ -50,7 +50,7 @@ export const StatusList = props => {
             </div>
             <div className="status-list">
             {props.statuses && props.statuses.length > 0 ? props.statuses && props.statuses.map((status, index) => {
-                return <StatusItem key={status.id} deleteStatus={deleteStatus} id={status.id} name={status.name} index={index}/>
+                return <StatusItem key={status.id} deleteStatus={deleteStatus} id={status.id} statuses={props.statuses} name={status.name} index={index}/>
             }) :
             <div className='no-statuses'>Can't find anything. Should we add a status?</div>
             }

@@ -167,6 +167,26 @@ export default class SchedulerApp {
         })
         this.storage.set('statuses', statuses)
         this.sendDataToUsers()
+      })
+      
+      ipcMain.on('rewrite:user', (_, data) => {
+        this.storage.set('users', data)
+        this.sendDataToUsers()
+      })
+
+      ipcMain.on('rewrite:role', (_, data) => {
+        this.storage.set('roles', data)
+        this.sendDataToUsers()
+      }) 
+
+      ipcMain.on('rewrite:group', (_, data) => {
+        this.storage.set('groups', data)
+        this.sendDataToUsers()
+      }) 
+
+      ipcMain.on('rewrite:status', (_, data) => {
+        this.storage.set('statuses', data)
+        this.sendDataToUsers()
       }) 
     }
 }

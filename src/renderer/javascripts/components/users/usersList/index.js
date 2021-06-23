@@ -7,9 +7,11 @@ export const UsersList = props => {
     console.log(users)
 
     const deleteUser = id => {
+        
         const updatedUsers = props.users.filter(el => {
             return el.id !== id
         })
+
         findUser(updatedUsers)
         window.electron.deleteUser(id)
     }
@@ -41,13 +43,14 @@ export const UsersList = props => {
                   return  el.id === user.group 
                 })
                 
-                return (
-                    
+                return (     
                     <UsersItem 
                         key={user.id} 
                         id={user.id} 
                         index={index} 
-                        group={group.length > 0 ? group[0].name : 'none'} 
+                        group={group.length > 0 ? group[0].name : 'none'}
+                        groupId = {group.length > 0 ? group[0].id : 'none'}
+                        groups={props.groups}
                         name={user.name}
                         findUser={findUser}
                         deleteUser={deleteUser}

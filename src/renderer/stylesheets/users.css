@@ -9,3 +9,7 @@
 @import url('components/roleItem.css');
 @import url('components/statusList.css');
 @import url('components/statusItem.css');
+@import url('components/usersEdit.css');
+@import url('components/roleEdit.css');
+@import url('components/statusEdit.css');
+@import url('components/groupEdit.css');

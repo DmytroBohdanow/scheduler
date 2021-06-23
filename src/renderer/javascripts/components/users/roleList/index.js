@@ -50,7 +50,7 @@ export const RoleList = props => {
             </div>
             <div className="role-list">
             {props.roles && props.roles.length > 0 ? props.roles && props.roles.map((role, index) => {
-                return <RoleItem key={role.id} deleteRole={deleteRole} id={role.id} name={role.name} index={index}/>
+                return <RoleItem key={role.id} deleteRole={deleteRole} id={role.id} name={role.name} index={index} roles={props.roles}/>
             }) :
             <div className='no-roles'>Can't find anything. Should we add a role?</div>
             }

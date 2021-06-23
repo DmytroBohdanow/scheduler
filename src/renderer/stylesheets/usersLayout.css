@@ -2,7 +2,7 @@ html, body {
   padding: 0;
   margin: 0;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 body {
@@ -26,12 +26,12 @@ body {
     color: #fff;
     text-align: center;
     -webkit-app-region: drag;
-    z-index: 0;
+    z-index: 1;
 }
 
 .window-handlers-box {
   -webkit-app-region: no-drag;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   height: 30px;
@@ -57,4 +57,10 @@ body {
 
 .root {
     margin-top: 30px;
+}
+
+.modal-box {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
 }

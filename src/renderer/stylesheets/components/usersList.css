@@ -1,8 +1,10 @@
 .users-list-box {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    height: fit-content;
     width: 90%;
     padding: 5px 2px 5px 2px;
     height: fit-content;

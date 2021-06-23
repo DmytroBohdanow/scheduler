@@ -44,7 +44,7 @@
     fill: #fff;
 }
 
-.users-item-delete-btn, .users-item-edit-btn-box svg path, .users-item-edit-btn-box {
+.users-item-delete-btn, .users-item-edit-btn-box svg path {
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 1s;

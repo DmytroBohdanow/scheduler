@@ -1,0 +1,56 @@
+.group-edit-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    height: 60px;
+    max-height: fit-content;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+    align-items: center;
+    color: #fff;
+    background-color: #bdc3c7;
+    transition: opacity 1s;
+    opacity: 0.7;
+}
+
+.group-edit-box:hover {
+    opacity: 1;
+}
+
+.group-edit-name {
+    height: 28px;
+    font-size: 22px;
+    outline-color: #3867d6;
+}
+
+.group-edit-action-box {
+    text-align: right;
+}
+
+.group-edit-name-box, .group-edit-action-box {
+    min-width: 33%;
+    max-width: 33%;
+}
+
+.save-group-btn {
+    width: fit-content;
+    display: inline-block;
+    height: 30px;
+    background-color: #3867d6;
+    color: #fff;
+    padding: 5px 15px 5px 15px;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 1s;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.save-group-btn:hover {
+    opacity: 1;
+}
