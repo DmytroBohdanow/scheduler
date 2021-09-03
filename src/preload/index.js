@@ -50,7 +50,6 @@ contextBridge.exposeInMainWorld('electron', {
     ipcRenderer.send('delete:user', data)
   },
   rewriteUser: data => {
-    console.log(data)
     ipcRenderer.send('rewrite:user', data)
   },
  })

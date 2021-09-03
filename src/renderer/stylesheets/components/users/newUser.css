@@ -18,6 +18,16 @@
     cursor: default;
     margin-bottom: 15px;
 }
+
+.new-user-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+    outline-color: #3867d6;
+}
+
 .new-user-title:hover, .user-name-label:hover, .user-group-label:hover {
     opacity: 1;
 }

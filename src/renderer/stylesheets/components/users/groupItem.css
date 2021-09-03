@@ -18,10 +18,18 @@
     background-color: #192a56;
 }
 
-.group-item-name {
+.group-item-name, .group-item-color {
     font-size: 26px;
 }
 
+.group-item-name, .group-item-color, .group-item-action-box {
+    max-width: 33%;
+    min-width: 33%;
+}
+
+.group-item-color {
+    text-align: center;
+}
 .group-item-edit-btn svg path {
     fill: #fff;
 }

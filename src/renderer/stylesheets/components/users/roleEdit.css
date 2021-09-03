@@ -1,4 +1,4 @@
-.status-edit-box {
+.role-edit-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,26 +14,35 @@
     opacity: 0.7;
 }
 
-.status-edit-box:hover {
+.role-edit-box:hover {
     opacity: 1;
 }
 
-.status-edit-name {
+.role-edit-name {
     height: 28px;
     font-size: 22px;
     outline-color: #3867d6;
 }
 
-.status-edit-action-box {
+.role-edit-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+    outline-color: #3867d6;
+}
+
+.role-edit-action-box {
     text-align: right;
 }
 
-.status-edit-name-box, .status-edit-action-box {
+.role-edit-name-box, .role-edit-action-box {
     min-width: 33%;
     max-width: 33%;
 }
 
-.save-status-btn {
+.save-role-btn {
     width: fit-content;
     display: inline-block;
     height: 30px;
@@ -51,6 +60,6 @@
     outline: none;
 }
 
-.save-status-btn:hover {
+.save-role-btn:hover {
     opacity: 1;
 }

@@ -1,4 +1,4 @@
-.status-list-box {
+.group-list-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,12 +8,11 @@
     height: fit-content;
 }
 
-.new-status-form {
+.new-group-form {
     margin: 0 auto;
-    padding: 5px 2px 5px 2px;
 }
 
-.new-status-name {
+.new-group-name {
     width: 200px;
     height: 30px;
     font-size: 16px;
@@ -21,7 +20,16 @@
     outline: #3867d6;
 }
 
-.status-list-legend {
+.new-group-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+    outline-color: #3867d6;
+}
+
+.group-list-legend {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,7 +43,7 @@
     transition: opacity, 1s;
 }
 
-.new-status-add-btn {
+.new-group-add-btn {
     width: fit-content;
     display: inline-block;
     height: 30px;
@@ -53,16 +61,16 @@
     outline: none;
 }
 
-.new-status-add-btn:disabled {
+.new-group-add-btn:disabled {
     background-color: #95a5a6;
     cursor: not-allowed;
 }
 
-.new-status-add-btn:hover {
+.new-group-add-btn:hover {
     opacity: 1;
 }
 
-.no-statuses, .status-list-title {
+.no-groups, .group-list-title {
     text-align: center;
     font-size: larger;
     color: #fff;
@@ -71,6 +79,6 @@
     cursor: default;
 }
 
-.no-statuses:hover, .status-list-title:hover {
+.no-groups:hover, .group-list-title:hover {
     opacity: 1;
 }

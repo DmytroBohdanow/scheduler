@@ -1,0 +1,29 @@
+.schedule-menu {
+    display: flex;
+    flex-direction: row;
+    text-transform: uppercase;
+    justify-content: center;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 15%;
+    text-align: center;
+    background-color: #2f3640;
+    color: #dcdde1;
+    padding: 20px;
+}
+.schedule-menu-item {
+    margin: 10px;
+    padding: 10px 10px ;
+    width: 340px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #16a085;
+    opacity: 0.7;
+    transition: opacity 1s;
+}
+
+
+.schedule-menu-item:hover {
+    opacity: 1;
+}

@@ -10,8 +10,8 @@ export const RolesEdit = props => {
         })
 
         const name = document.getElementById(`role-edit-name-${props.index}`).value
-    
-        roles[roleId] = { id: props.id, name }
+        const color = document.getElementById(`role-edit-color-${props.index}`).value
+        roles[roleId] = { id: props.id, name, color}
 
         props.setEdit(false)
         window.electron.rewriteRole(roles)
@@ -21,6 +21,9 @@ export const RolesEdit = props => {
         <div className="role-edit-box">
             <div className="role-edit-name-box">
                 {props.index + 1}. <input className="role-edit-name" id={`role-edit-name-${props.index}`} placeholder="New name" defaultValue={props.name}></input>
+            </div>
+            <div className="role-edit-color-box">
+                <input type="color" className="role-edit-color" id={`role-edit-color-${props.index}`} defaultValue={props.color}></input>
             </div>
             <div className="role-edit-action-box"><button className="save-role-btn" id="save-role-btn" onClick={editRole}>Save</button></div>
         </div>

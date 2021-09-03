@@ -26,6 +26,7 @@ export const NewUser = props => {
         const user = {
             id: nanoid(),
             name: document.getElementById("new-user-name").value,
+            color: document.getElementById("new-user-color").value,
             group: document.getElementById("new-user-group") === null ? 
                    'none' :
                     document.getElementById("new-user-group").value,
@@ -40,6 +41,7 @@ export const NewUser = props => {
             <div>
             <label htmlFor="new-user-name" className="user-name-label">User name: </label>
             <input placeholder="Name of a new user" name="new-user-name" onKeyPress={handleKey} onChange={ifEmptyCheck} type="text" id="new-user-name" className="new-user-name" />
+            <input name="new-user-name" type="color" id="new-user-color" defaultValue="#ffffff" className="new-user-color" />
             </div><br/>
             {
                 props.groups && props.groups.length > 0 ? 
@@ -48,7 +50,7 @@ export const NewUser = props => {
                     <select className="new-user-group" id="new-user-group" name="new-user-group">
                         <option value="none">none</option>
                         {props.groups && props.groups.map((group) => {
-                            return <option key={group.id} value={group.id}>{group.name}</option>
+                            return <option key={group.id} value={group.id} style={{color: group.color}}>{group.name}</option>
                         })}
                     </select>
                 </div> 

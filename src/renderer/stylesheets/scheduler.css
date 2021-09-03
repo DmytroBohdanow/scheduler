@@ -1,0 +1,4 @@
+@import url('./schedulerLayout.css');
+@import url('./components/scheduler/schedulerMenu.css');
+@import url('./components/scheduler/schedulerSlider.css');
+@import url('./components/scheduler/newSchedule.css');

@@ -3,6 +3,7 @@ module.exports = {
     entry: {
       menu:'./src/renderer/javascripts/index.js',
       users: './src/renderer/javascripts/users.js',
+      scheduler: './src/renderer/javascripts/scheduler.js',
     },
     output: {
       filename: "[name].js"

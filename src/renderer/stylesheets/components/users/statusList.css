@@ -1,4 +1,4 @@
-.role-list-box {
+.status-list-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,12 +8,28 @@
     height: fit-content;
 }
 
-.new-role-form {
+.new-status-form {
     margin: 0 auto;
-    padding: 5px 2px 5px 2px;
 }
 
-.roles-list-legend {
+.new-status-name {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    overflow: auto;
+    outline-color: #3867d6;
+}
+
+.new-status-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+    outline-color: #3867d6;
+}
+
+.status-list-legend {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,18 +43,7 @@
     transition: opacity, 1s;
 }
 
-.roles-list-legend:hover {
-    opacity: 1;
-}
-.new-role-name {
-    width: 200px;
-    height: 30px;
-    font-size: 16px;
-    overflow: auto;
-    outline: #3867d6;
-}
-
-.new-role-add-btn {
+.new-status-add-btn {
     width: fit-content;
     display: inline-block;
     height: 30px;
@@ -56,16 +61,16 @@
     outline: none;
 }
 
-.new-role-add-btn:disabled {
+.new-status-add-btn:disabled {
     background-color: #95a5a6;
     cursor: not-allowed;
 }
 
-.new-role-add-btn:hover {
+.new-status-add-btn:hover {
     opacity: 1;
 }
 
-.no-roles, .role-list-title {
+.no-statuses, .status-list-title {
     text-align: center;
     font-size: larger;
     color: #fff;
@@ -74,6 +79,6 @@
     cursor: default;
 }
 
-.no-roles:hover, .role-list-title:hover {
+.no-statuses:hover, .status-list-title:hover {
     opacity: 1;
 }

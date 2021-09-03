@@ -1,4 +1,4 @@
-.group-list-box {
+.role-list-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,20 +8,28 @@
     height: fit-content;
 }
 
-.new-group-form {
+.new-role-form {
     margin: 0 auto;
-    padding: 5px 2px 5px 2px;
 }
 
-.new-group-name {
+.new-role-name {
     width: 200px;
     height: 30px;
     font-size: 16px;
     overflow: auto;
-    outline: #3867d6;
+    outline-color: #3867d6;
 }
 
-.group-list-legend {
+.new-role-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+    outline-color: #3867d6;
+}
+
+.roles-list-legend {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,7 +43,11 @@
     transition: opacity, 1s;
 }
 
-.new-group-add-btn {
+.roles-list-legend:hover {
+    opacity: 1;
+}
+
+.new-role-add-btn {
     width: fit-content;
     display: inline-block;
     height: 30px;
@@ -53,16 +65,16 @@
     outline: none;
 }
 
-.new-group-add-btn:disabled {
+.new-role-add-btn:disabled {
     background-color: #95a5a6;
     cursor: not-allowed;
 }
 
-.new-group-add-btn:hover {
+.new-role-add-btn:hover {
     opacity: 1;
 }
 
-.no-groups, .group-list-title {
+.no-roles, .role-list-title {
     text-align: center;
     font-size: larger;
     color: #fff;
@@ -71,6 +83,6 @@
     cursor: default;
 }
 
-.no-groups:hover, .group-list-title:hover {
+.no-roles:hover, .role-list-title:hover {
     opacity: 1;
 }

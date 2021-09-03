@@ -9,7 +9,8 @@ export const RoleItem = props => {
     return (
         <>
         <div  className={(props.index + 1) % 2 === 0 ? 'role-item-box-even' : 'role-item-box-odd'}>
-            <div className="role-item-name">{props.index + 1}. {props.name}</div>
+            <div className="role-item-name">{props.index + 1}. <span style={{color: props.color}}>{props.name}</span></div>
+            <div className="role-item-color" style={{color: props.color}}>{props.color}</div>
             <div className="role-item-action-box">
                 <div className="role-item-delete-btn-box">
                     <span className="role-item-delete-btn" onClick={() => {
@@ -28,6 +29,7 @@ export const RoleItem = props => {
                 id={props.id} 
                 index={props.index} 
                 name={props.name}
+                color={props.color}
                 roles={props.roles}
                 setEdit={setEdit}
             /> 

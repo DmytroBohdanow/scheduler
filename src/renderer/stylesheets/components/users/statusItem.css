@@ -18,8 +18,15 @@
     background-color: #192a56;
 }
 
-.status-item-name {
+.status-item-name, .status-item-color {
     font-size: 26px;
+    overflow: hidden;
+    max-width: 33%;
+    min-width: 33%;
+}
+
+.status-item-color {
+    margin: 0 auto;
 }
 
 .status-item-edit-btn svg path {

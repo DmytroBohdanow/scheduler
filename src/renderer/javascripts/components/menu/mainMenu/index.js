@@ -1,12 +1,14 @@
 import React from "react";
 
 export const MainMenu = () => {
+    
     const openUsers = () => {
         window.electron.openUserManager()
     }
     const openSchedules = () => {
         window.electron.openScheduleManager()
     }
+
     return (
     <div className="main-menu">
         <h1>Main menu</h1>

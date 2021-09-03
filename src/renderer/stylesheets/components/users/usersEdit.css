@@ -19,22 +19,36 @@
 }
 
 .users-edit-name, .users-edit-group {
-    height: 28px;
+    height: 30px;
     font-size: 22px;
     outline-color: #3867d6;
 }
 
-.users-edit-group-box {
-    text-align: center;
+.users-edit-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+    outline-color: #3867d6;
+}
+
+.users-edit-group {
+    max-width: 80%;
 }
 
 .users-edit-action-box {
     text-align: right;
 }
 
-.users-edit-name-box, .users-edit-group-box, .users-edit-action-box {
-    min-width: 33%;
-    max-width: 33%;
+.users-edit-color-box, .users-edit-group-box, .users-edit-action-box {
+    min-width: 20%;
+    max-width: 20%;
+}
+
+.users-edit-name-box {
+    min-width: 40%;
+    max-width: 40%;
 }
 
 .save-user-btn {

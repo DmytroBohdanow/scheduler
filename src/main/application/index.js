@@ -61,8 +61,43 @@ export default class SchedulerApp {
       })
     }
 
+    createSchedulerWindow() {
+      const { width, height } = screen.getPrimaryDisplay().workAreaSize
+      this.schedulerWindow = new BrowserWindow({
+          title: CONFIG.name,
+          width,
+          height,
+          frame: false,
+          fullscreenWindowTitle: 'hidden', 
+          webPreferences: {
+            worldSafeExecuteJavaScript: true,
+            preload: path.join(app.getAppPath(), 'preload', 'index.js')
+          }
+      })
+
+      this.schedulerWindow.loadFile('renderer/scheduler.html')
+
+      this.schedulerWindow.webContents.openDevTools({ mode: 'detach'})
+
+      this.schedulerWindow.webContents.on('did-finish-load', () => {
+        this.sendDataToScheduler()
+      })
+
+      this.schedulerWindow.on('closed', () => {
+          this.schedulerWindow = null
+      })
+    }
+
      sendDataToUsers() {
       this.usersWindow.webContents.send('data', { 
+        users: this.storage.get('users'),
+        groups: this.storage.get('groups'),
+        roles: this.storage.get('roles'),
+        statuses: this.storage.get('statuses')
+      })
+    }
+    sendDataToScheduler() {
+      this.schedulerWindow.webContents.send('data', { 
         users: this.storage.get('users'),
         groups: this.storage.get('groups'),
         roles: this.storage.get('roles'),
@@ -93,6 +128,11 @@ export default class SchedulerApp {
       })
 
       ipcMain.on('open:schedules', () => {
+        if(this.schedulerWindow) {
+          this.schedulerWindow.show()
+        } else {
+          this.createSchedulerWindow()
+        }
       })
 
       ipcMain.on('window:close', () => {
@@ -109,6 +149,7 @@ export default class SchedulerApp {
         groups.push(data)
         this.storage.set('groups', groups)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       }) 
 
       ipcMain.on('save:role', (_, data) => {
@@ -116,6 +157,7 @@ export default class SchedulerApp {
         roles.push(data)
         this.storage.set('roles', roles)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       }) 
 
       ipcMain.on('save:status', (_, data) => {
@@ -123,6 +165,7 @@ export default class SchedulerApp {
         statuses.push(data)
         this.storage.set('statuses', statuses)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       })
 
       ipcMain.on('save:user', (_, data) => {
@@ -130,6 +173,7 @@ export default class SchedulerApp {
         users.push(data)
         this.storage.set('users', users)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       }) 
 
       ipcMain.on('delete:group', (_, data) => {
@@ -139,6 +183,7 @@ export default class SchedulerApp {
         })
         this.storage.set('groups', groups)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       })
 
       ipcMain.on('delete:role', (_, data) => {
@@ -148,6 +193,7 @@ export default class SchedulerApp {
         })
         this.storage.set('roles', roles)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       }) 
 
       ipcMain.on('delete:user', (_, data) => {
@@ -158,6 +204,7 @@ export default class SchedulerApp {
         console.log(data, users)
         this.storage.set('users', users)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       }) 
 
       ipcMain.on('delete:status', (_, data) => {
@@ -167,26 +214,31 @@ export default class SchedulerApp {
         })
         this.storage.set('statuses', statuses)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       })
       
       ipcMain.on('rewrite:user', (_, data) => {
         this.storage.set('users', data)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       })
 
       ipcMain.on('rewrite:role', (_, data) => {
         this.storage.set('roles', data)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       }) 
 
       ipcMain.on('rewrite:group', (_, data) => {
         this.storage.set('groups', data)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       }) 
 
       ipcMain.on('rewrite:status', (_, data) => {
         this.storage.set('statuses', data)
         this.sendDataToUsers()
+        this.schedulerWindow ? this.sendDataToScheduler() : null
       }) 
     }
 }

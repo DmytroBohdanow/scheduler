@@ -18,8 +18,11 @@
     background-color: #192a56;
 }
 
-.role-item-name {
+.role-item-name, .role-item-color {
     font-size: 26px;
+    max-width: 33%;
+    min-width: 33%;
+    overflow: hidden;
 }
 
 .role-item-edit-btn-box svg path {

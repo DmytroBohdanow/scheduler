@@ -34,24 +34,27 @@ export const UsersList = props => {
             <textarea placeholder="...lost someone?" id="users-search-field" onChange={()=> {findUser(props.users)}} className="users-search-field"></textarea>
             </div>
             <div className='users-list-legend'>
-                <div>#. user</div>
-                <div>group</div>
-                <div>actions</div>
+                <div className='users-list-legend-users'>#. user</div>
+                <div className='users-list-legend-group'>group</div>
+                <div className='users-list-legend-color'>color</div>
+                <div className='users-list-legend-actions'>actions</div>
             </div>
             {users && users.length > 0 ? users && users.map((user, index) => {
                 const group = props.groups.filter(el => {
                   return  el.id === user.group 
                 })
-                
+                console.log(group)
                 return (     
                     <UsersItem 
                         key={user.id} 
                         id={user.id} 
                         index={index} 
                         group={group.length > 0 ? group[0].name : 'none'}
+                        groupColor={group[0] ? group[0].color : 'gray'}
                         groupId = {group.length > 0 ? group[0].id : 'none'}
                         groups={props.groups}
                         name={user.name}
+                        color={user.color}
                         findUser={findUser}
                         deleteUser={deleteUser}
                         users={props.users}

@@ -9,16 +9,18 @@ export const UsersItem = props => {
     return (
         <>
         <div className={(props.index + 1) % 2 === 0 ? 'users-item-box-even' : 'users-item-box-odd'}>
-            <div className="users-item-name">{props.index + 1}. {props.name}</div>
+            <div className="users-item-name">{props.index + 1}. <span style={{color: props.color}}>{props.name}</span></div>
             <div 
             className={
             props.group === 'none' ?
             'users-item-group-none' :
             'users-item-group'
             }
+            style={{color: props.groupColor}}
             >
               {props.group}
             </div>
+            <div className="users-item-color" style={{color: props.color}}>{props.color}</div>
             <div className="users-item-action-box">
                 <div className="users-item-delete-btn-box">
                     <span className="users-item-delete-btn" onClick={() => {
@@ -40,6 +42,8 @@ export const UsersItem = props => {
                         group={props.group} 
                         groups={props.groups} 
                         name={props.name}
+                        color={props.color}
+                        groupColor={props.groupColor}
                         findUser={props.findUser}
                         users={props.users}
                         setEdit={setEdit}

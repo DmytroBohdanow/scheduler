@@ -24,11 +24,15 @@
     overflow: hidden;
 }
 
-.users-item-group, .users-item-group-none { text-align: center; }
+.users-item-action-box, .users-item-group-none, .users-item-group, .users-item-color,
+.users-list-legend-group, .users-list-legend-actions, .users-list-legend-color {
+    min-width: 20%;
+    max-width: 20%;
+}
 
-.users-item-action-box, .users-item-group-none, .users-item-group, .users-item-name {
-    min-width: 33%;
-    max-width: 33%;
+.users-item-name, .users-list-legend-users  {
+    min-width: 40%;
+    max-width: 40%;
 }
 
 .users-item-group-none {
@@ -50,7 +54,7 @@
     transition: opacity 1s;
 }
 
-.users-item-delete-btn-box, .users-item-edit-btn-box svg path, .users-item-edit-btn-box {
+.users-item-delete-btn-box, .users-item-edit-btn-box svg path, .users-item-edit-btn-box, .users-list-legend-actions {
     text-align: right;
 }
 
